@@ -9,7 +9,7 @@ define([
     }
 
     return {
-        initialize: initialize
+        initialize: initialize; // This is a change to app.js
     };
 });
 
