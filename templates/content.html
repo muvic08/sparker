@@ -1,0 +1,80 @@
+<div class="span8 content pull-right">
+    <div class="nav-header"> 
+        <div id="postSparkDialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="windowTitleLabel" aria-hidden="true">
+    <div class="modal-header">
+        <a href="#" class="close" data-dismiss="modal">&times;</a>
+        <h3>Please enter a new title for this window.</h3>
+    </div>
+    <div class="modal-body">
+        <div class="divDialogElements">
+            <input class="xlarge" id="xlInput" name="xlInput" type="text" />
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn" onclick="closeDialog ();">Cancel</a>
+        <a href="#" class="btn btn-primary" onclick="okClicked ();">OK</a>
+    </div>
+</div>
+        <ul class="breadcrumb no-border-radius">
+            <li class="pull-right">
+                <a href="#" title="logout"><span class="icon-eject font-icon"></span></a> 
+                <span class="divider"></span>
+            </li>
+            <li class="pull-right">
+                <a href="#" title="chat"><span class="icon-chat font-icon"></span></a> 
+                <span class="divider"></span>
+            </li>
+            <li class="pull-right">
+                <div ng-controller="ModalDemoCtrl">
+                    <a href="#postSparkDialog" title="spark" ng-click="open()">
+                        <span class="icon-pencil font-icon"></span>
+                    </a>
+                    <div class="row-fluid" >
+                        <div modal="shouldBeOpen" close="close()" options="opts">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" ng-click="close(result)" aria-hidden="true">&times;</button>
+                                <h5 style="text-align: center; color: #fff;">Spark an idea</h5>
+                            </div>
+                            <div class="modal-body">
+                                <textarea id="message" type="text" ng-model="result" name="body" ng-change="update(result)"></textarea>
+                                <input id="tags" type="text" ui-select2="tagOptions" ng-model="TagsString" />
+                            </div>
+                            <div class="modal-footer">
+                                <button id="spark" class="btn btn-small" ng-click="spark(result)" disabled>Spark</button>
+                                <button id="camera" class="btn btn-small pull-left" ng-click=""><i class="icon-camera"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </li>
+            <li class="pull-right map_view">
+                <a href="#" title="map view"><span class="icon-location font-icon"></span></a> 
+                <span class="divider"></span>
+            </li>
+            <li style="clear:both"></li>
+        </ul>
+    </div>
+
+<!--
+    <div id="input" class="well well-small sparks-container">
+
+        <form class="spark-write-box" ng-submit="addTask()" id="messageform">
+            <textarea type="text" ng-model="newSpark" name="body" id="message" placeholder="Do you have an idea, spark it!"></textarea>
+            <div id="spark-write-options">
+                <input type="submit" class="submit" value="Post">
+                <input type="submit" class="cancel" value="Cancel">
+                <input type="hidden" name="next" value="{{ request.path }}"/>
+                <div style="clear:both;"></div>
+            </div>
+            <div style="clear:both;"></div>
+            {{ xsrf_form_html() }}
+        </form>
+
+    </div>
+-->
+
+    <ul class="well well-small sparks-container" style="list-style: none; margin-left: 0;">
+        {% include "spark_msg.html" %} 
+    </ul>
+    <div style="clear:both height: 40px;"> </div>
+</div>

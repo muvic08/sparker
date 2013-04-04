@@ -1,0 +1,43 @@
+<li ng-hide="!tasks.length" ng-repeat="result in tasks | orderBy:predicate:reverse | filter:searchText" id="{{!result._id}}" class="spark message well well-small spark_active" > 
+    <div class="spark_row_top spark_raw">
+        <div class="delete" style="background: transparent;">
+          <i class="icon-cancel" style="display:block;color:rgba(255, 0, 0, 0.2)"></i>
+        </div>
+        <div class="status">
+            <div class="time">
+            <!--    <i class="icon-hourglass"></i> <span> {{!result.timeCreated | date:'EEE d @ hh:mm a' }} </span> -->
+                <i class="icon-hourglass"></i> <span> {{!result.datetime_created | fromNow }} </span>
+            </div>
+            <div class="chat">
+                <i class="icon-comment-1"></i> <span> {{!result.distancePosted}} meters away </span>
+            </div>
+      <!--      <div class="map">
+                <i class="icon-target"></i> <span> </span>
+            </div> -->
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+    <hr class="thin">
+    <div class="spark_row_middle spark_raw"> 
+        <div class="vote_column">
+            <div class="vote_up" ng-click="upVoteSpark(result, 1)"><i class="icon-up-dir"></i></div>
+            <div class="vote_count">{{!result.votes}} </div>
+            <div class="vote_down" ng-click="upVoteSpark(result, -1)"><i class="icon-down-dir"></i></div>
+        </div>
+        <div class="content_column">
+            <i class="icon-quote-left"></i>
+                <span> {{!result.body}}</span>
+            <i class="icon-quote-right"></i>
+        </div>
+        <div class="nav_column"></div>
+        <div style="clear:both;"></div>
+    </div>
+    <hr class="thin">
+    <div class="spark_row_bottom spark_raw">
+        <a href="" ng-repeat="tag in result.tags" class="pull-left tag" ng-click="tagFilter(tag, searchText)">#{{!tag}}</a> 
+        <div class="author">
+            <a href="">{{!result.owner_id}}</a> <i class=" icon-comment-2"></i>
+        </div>
+    </div>
+</li> 
+<li ng-show="!tasks.length"> Be the first one to spark your neighorhood to live! </li>

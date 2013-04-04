@@ -1,0 +1,109 @@
+<div class="span4 sidebar visible-desktop visible-tablet">
+    <div class="fixed-sidebar fixed-sidebar-desk-tablet">
+        <div class="well-modified well-small logo"> Sparker</div>
+        <div class="sort-list-desk-tablet">
+            <ul class="nav nav-tabs nav-stacked sidebar-nav-list">
+             <!---   <li id="popular" class="sort-item" ng-repeat="item in sortList">
+                    <a tabindex="-1" href="" ng-click="changeSort(item.predicate, item.reverse)">
+                        <i class="{{!item.icon}} sidebar-icon"></i><span>{{!item.name}}</span>
+                    </a>
+                </li> -->
+                <li id="recent" class="sort-item">
+                    <a tabindex="-1" href="" ng-click="predicate = 'votes'; reverse=!reverse">
+                        <i class="icon-star sidebar-icon"></i><span>Popular</span>
+                    </a>
+                </li>
+                <li id="recent" class="sort-item">
+                    <a tabindex="-1" href="" ng-click="predicate = 'timeCreated'; reverse=true">
+                        <i class="icon-clock sidebar-icon"></i><span>Recent Sparked</span>
+                    </a>
+                </li>
+                <li id="nearest" class="sort-item">
+                    <a tabindex="-1" href="" ng-click="predicate = 'distancePosted'; reverse=false">
+                        <i class="icon-location sidebar-icon"></i><span>Sparks Near Me</span> 
+                    </a>
+                </li> 
+                <br>
+                <li>Search: <input class="input-block-level" type="text" ng-model="searchText"></li>
+                <li class="divider"></li>
+            </ul>
+            <ul id="tags_list" class="nav nav-tabs nav-stacked sidebar-nav-list">
+                <li>
+                    <a tabindex="-1" style="color: blue; cursor: pointer;" ng-click="tagFilter('', searchText)">
+                        <span>#All Tags</span>
+                        <span class="pull-right">{{!total_count}}</span>
+                    </a>
+                </li>
+                <li ng-hide="showAllTags" class="sort-item" ng-repeat="tag in unique_tags | orderBy:sortTags | limitTo:4">
+                    <a tabindex="-1" style="color: blue; cursor: pointer;" ng-click="tagFilter(tag.tag, searchText)">
+                        <span>#{{!tag.tag}}</span>
+                        <span class="pull-right">{{!tag.count}}</span>
+                    </a>
+                </li>
+                <li ng-show="showAllTags" class="sort-item" ng-repeat="tag in unique_tags | orderBy:sortTags  | limitTo:10">
+                    <a tabindex="-1" style="color: blue; cursor: pointer;" ng-click="tagFilter(tag.tag, searchText)">
+                        <span>#{{!tag.tag}}</span>
+                        <span class="pull-right">{{!tag.count}}</span>
+                    </a>
+                </li>
+                <li ng-hide="showAllTags"><a href="" ng-click="showAllTags = !showAllTags"> more ... </a></li>
+                <li ng-show="showAllTags"><a href="" ng-click="showAllTags = !showAllTags"> less ... </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="sidebar visible-phone">
+    <div class="fixed-sidebar fixed-sidebar-phone">
+        <div class="well-small logo-phone center"> Sparker</div>
+        <ul class="nav nav-tabs nav-stacked sidebar-nav-list">
+            <li class="back"><a tabindex="-1" href="#"><i class="icon-back sidebar-icon sidebar-dark-icon"></i><span>Back</span></a></li>
+            <li id="popular" class="sort-item">
+                <a tabindex="-1" href="" ng-click="predicate = 'votes'; reverse=true">
+                    <i class="icon-star sidebar-icon"></i><span>Popular</span>
+                </a>
+            </li>
+            <li id="recent" class="sort-item">
+                <a tabindex="-1" href="" ng-click="predicate = 'timeCreated'; reverse=true">
+                    <i class="icon-clock sidebar-icon"></i><span>Recent Sparked</span>
+                </a>
+            </li>
+            <li id="nearest" class="sort-item">
+                <a tabindex="-1" href="" ng-click="predicate = 'distancePosted'; reverse=false">
+                    <i class="icon-location sidebar-icon"></i><span>Sparks Near Me</span> 
+                </a>
+            </li>
+            <li>Search: <input class="input-block-level" type="text" ng-model="searchText"></li>
+                <li class="divider"></li>
+            </ul>
+            <ul id="tags_list" class="nav nav-tabs nav-stacked sidebar-nav-list">
+                <li>
+                    <a tabindex="-1" style="color: blue; cursor: pointer;" ng-click="tagFilter('', searchText)">
+                        <span>#All Tags</span>
+                        <span class="pull-right">{{!total_count}}</span>
+                    </a>
+                </li>
+                <li ng-hide="showAllTags" class="sort-item" ng-repeat="tag in unique_tags | orderBy:sortTags | limitTo:4">
+                    <a tabindex="-1" style="color: blue; cursor: pointer;" ng-click="tagFilter(tag.tag, searchText)">
+                        <span>#{{!tag.tag}}</span>
+                        <span class="pull-right">{{!tag.count}}</span>
+                    </a>
+                </li>
+                <li ng-show="showAllTags" class="sort-item" ng-repeat="tag in unique_tags | orderBy:sortTags  | limitTo:10">
+                    <a tabindex="-1" style="color: blue; cursor: pointer;" ng-click="tagFilter(tag.tag, searchText)">
+                        <span>#{{!tag.tag}}</span>
+                        <span class="pull-right">{{!tag.count}}</span>
+                    </a>
+                </li>
+                <li ng-hide="showAllTags"><a href="" ng-click="showAllTags = !showAllTags"> more ... </a></li>
+                <li ng-show="showAllTags"><a href="" ng-click="showAllTags = !showAllTags"> less ... </a></li>
+            </ul>
+
+        <div class=" well-small" style="height: 150px"> <!-- Map Goes here --> </div>
+        <div class="sidebar-manipulator">
+            <a class="sidebar-toggle" href="#" data-toggle="collapse" data-target=".nav-collapse" style="padding: 0 3px;">
+                <span class="icon-menu font-icon"></span>
+            </a>
+        </div>
+    </div>
+</div>

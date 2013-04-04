@@ -1,0 +1,17 @@
+var Global_Var = {
+	data:null,
+	latlng: null,
+	lat:null,
+	lon:null,
+	latlon: [],
+	queryUrl:null,
+	dataArray: [],
+	tempM: null,
+	whoisit: null,
+	sparksArray: [],
+	popularArray: [],
+	results: [],
+	updater: null,
+	sidebarClosed: true,
+	sort_param: "votes",
+};

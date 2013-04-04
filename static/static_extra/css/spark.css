@@ -1,0 +1,136 @@
+.spark {
+	margin: 5px 2px;
+	padding: 1px 5px;
+	border: 1px solid rgba(50,50,50,0.2);
+	border-radius: ;3px;
+	background: #fff;
+}
+
+.spark_active {
+	-moz-box-shadow: 0 0 1px 1px rgba(83, 134, 139, 0.3);
+		-webkit-box-shadow: 0 0 1px 1px rgba(83, 134, 139, 0.3);
+			box-shadow: 0 0 1px 1px rgba(83, 134, 139, 0.3);
+}
+
+.spark_row {
+	position: relative;
+}
+.spark_row_top {
+	border-radius: 3px;
+	background: ;rgba(125,180,181,0.1);
+	padding: 1px;
+	margin: 0px 0px 3px;
+}
+
+.spark_row_top, .spark_row_bottom {
+	display: block;
+}
+
+.spark_row_bottom {
+	display: ;none;
+}
+
+.spark_row_top .delete {
+	width: 5%;
+	float: left;
+	background: green;
+}
+.spark_row_top .status {
+	width: 90%;
+	float: right;
+}
+.spark_row_top .status > div {
+	font-size: 10px;
+	font-weight: ;700;
+	padding: 0px 5%;
+	float: right;
+	text-align: right;
+}
+.spark_row_top .status .status_icon {
+	width: 20px;
+	height: 20px;
+	float: left;
+	text-align: right;
+	background: url("Sparker_Design/iconspritesheet_grey1.png");
+	border: 1px solid white;
+}
+.status i {
+	font-size: 14px;
+	color: grey;
+}
+.status span {
+	padding: 0px 5px;
+	border-radius: 3px;
+	color: #fff;
+	background: rgba(125,180,181,1);
+}
+
+.spark_row_middle {
+	position: relative;
+	margin-bottom: 10px;
+	background: ;red;
+	min-height: 45px;
+}
+	.vote_column {
+		position: absolute;
+		z-index: 99;
+		left: -5px;
+		top: -5px;
+		padding: 0 4px;
+		width: 27px;
+		background: ;red;
+	}
+		.vote_column .vote_up, .vote_column .vote_down {
+			font-size: 21px;
+			margin-left: 0px;
+		}
+
+		.vote_column .vote_count {
+			text-align: center;
+			border-radius: 3px;
+			font-size: 12px;
+			padding: 0 0 3px 0;
+			color: rgba(125,180,181,1);
+		}
+
+		.vote_column i:hover {
+			color: rgba(125,180,181,1);
+			cursor: pointer;
+			cursor: hand;
+		}
+	.content_column {
+		padding: 2px 20px 2px 40px;
+		float: left;
+		font-weight: 600;
+		font-size: 17px;
+		color: rgba(20,20,20,1);
+	}
+		.content_column a {
+			font-size: inherit;
+		}
+		.content_column i {
+			width: 20px;
+			color: rgba(104,1,72,0.5);
+		}
+	.nav_column {
+		width: auto;
+		float: left;
+	}
+.spark_row_bottom {
+	font-size: 11px;
+	margin: 5px;
+}
+	.spark_row_bottom .author {
+		text-align: right;
+	}
+	.spark_row_bottom .author i {
+		font-size: 16px;
+		color: rgba(125,180,181,1);
+	}
+.thin {
+	height: 0px;
+	border: 0;
+	color: #333;
+	background-color: rgba(0,0,0,0.05);
+	width: 100%;
+}
